@@ -71,3 +71,21 @@
 .list a:hover {
   color: aqua;
 }
+.backtotop {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  bottom: 20px;
+  right: 20px;
+  font-size: 30px;
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+  border-radius: 100px;
+  border: none;
+}
+
+.backtotop:hover {
+  background-color: #e5e5e5;
+  color: #000;
+}

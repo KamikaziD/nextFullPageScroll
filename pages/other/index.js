@@ -7,9 +7,9 @@ export default function Other() {
       <div>
         <h1>Other Page</h1>
         <Link href="/#passport">
-          <a>Section 2</a>
-        </Link>
-        <Link href="/#documents">
+          <a>#passport</a>
+        </Link>{" "}
+        <Link href="/#casino">
           <a>Section 4</a>
         </Link>
       </div>
