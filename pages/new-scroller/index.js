@@ -1,15 +1,11 @@
-import Section from "../components/Section";
-import { Searchbox } from "../components/Searchbox.component";
-import { TagList } from "../components/tag.list.component";
-import React, { useState, useEffect } from "react";
+import Section from "../../components/Section";
+import React, { createRef, useState, useEffect } from "react";
 import Link from "next/Link";
 
-import styles from "../styles/styles.module.css";
+import styles from "../../styles/styles.module.css";
 
-export default function Home() {
+export default function NewScroller() {
   const [showButton, setShowButton] = useState(false);
-  const [tags, setTags] = useState([]);
-  const [searchfield, setSearchfield] = useState("");
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -18,22 +14,7 @@ export default function Home() {
     });
   };
 
-  const getTags = () => {
-    fetch("./hashtags.json")
-      .then((response) => response.json())
-      .then((hash) => {
-        setTags(hash.hashtag);
-      });
-  };
-
-  const handleChange = (e) => {
-    setSearchfield(e.target.value);
-  };
-
   useEffect(() => {
-    {
-      !tags.length ? getTags() : null;
-    }
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 300) {
         setShowButton(true);
@@ -43,31 +24,31 @@ export default function Home() {
     });
   }, []);
 
-  const filteredTags = tags.filter((tag) =>
-    tag.keyword.toLowerCase().includes(searchfield.toLowerCase())
-  );
-
   return (
     <div>
       <Section id="usecases">
         <div className={styles.container}>
           <h1>Click the #hashtags</h1>
-          <Searchbox placeholder="search tags" handleChange={handleChange} />
-
           <div>
             <h5>
-              <TagList tags={filteredTags} />
+              <Link activeClass="active" href="#casino" ref={createRef()}>
+                <a>#casino</a>
+              </Link>{" "}
+              <Link activeClass="active" href="#passport" ref={createRef()}>
+                <a>#passport</a>
+              </Link>{" "}
+              <Link activeClass="active" href="#bank" ref={createRef()}>
+                <a>#bank</a>
+              </Link>{" "}
+              <Link activeClass="active" href="#documents" ref={createRef()}>
+                <a>#documents</a>
+              </Link>
             </h5>
           </div>
           <div>
             <Link href="/other">
               <a>Another Page</a>
             </Link>
-            <div>
-              <Link href="/new-scroller">
-                <a>Another Page</a>
-              </Link>
-            </div>
           </div>
         </div>
       </Section>
@@ -89,14 +70,12 @@ export default function Home() {
           <h3>Some useful information</h3>
         </div>
       </Section>
-
       <Section id="documents">
         <div className={styles.container4}>
           <h1>Documents</h1>
           <h3>Some useful information</h3>
         </div>
       </Section>
-
       {showButton && (
         <button onClick={scrollToTop} className={styles.backtotop}>
           &#8673;

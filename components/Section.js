@@ -1,13 +1,13 @@
-import styles from "../styles/Layout.module.css";
+import styles from "./Section.module.css";
 
-export default function Section({ id, color, children }) {
-  const className = `${styles.section} ${styles[color]}`;
+export default function Section({ id, children }) {
+  const className = `${styles.section}`;
 
   return (
-    <>
+    <div className="section">
       <section id={id} className={className}>
         {children}
       </section>
-    </>
+    </div>
   );
 }

@@ -10,7 +10,7 @@ export default function Other() {
           <a>#passport</a>
         </Link>{" "}
         <Link href="/#casino">
-          <a>Section 4</a>
+          <a>#casino</a>
         </Link>
       </div>
     </>

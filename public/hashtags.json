@@ -1,0 +1,32 @@
+{
+  "hashtag": [
+    {
+      "id": 1,
+      "section": "casino",
+      "caption": "#casino",
+      "link": "/#casino",
+      "keyword": "casino, gambling, identify, test"
+    },
+    {
+      "id": 2,
+      "section": "passport",
+      "caption": "#passport",
+      "link": "/#passport",
+      "keyword": "passport, traveling, identify"
+    },
+    {
+      "id": 3,
+      "section": "bank",
+      "caption": "#bank",
+      "link": "/#bank",
+      "keyword": "bank, investment, secure, transact"
+    },
+    {
+      "id": 4,
+      "section": "documents",
+      "caption": "#documents",
+      "link": "/#documents",
+      "keyword": "documents, corporate, secure, test"
+    }
+  ]
+}
